@@ -1,6 +1,6 @@
-streamlit==1.14.0
-numpy==1.21.6
-librosa==0.9.0
-tensorflow==2.7.0
-libsndfile==1.0.31
-soundfile==0.10.3.post1
+streamlit
+numpy
+librosa
+tensorflow
+libsndfile
+soundfile
