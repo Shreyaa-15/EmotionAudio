@@ -6,6 +6,17 @@ from keras.preprocessing import sequence
 from keras.models import Sequential
 from keras.layers import Dense, LSTM, Dropout
 
+# Define emotion labels
+emotion_labels = {
+    0: "Angry",
+    1: "Disgust",
+    2: "Fear",
+    3: "Happy",
+    4: "Neutral",
+    5: "Sad",
+    6: "Surprise"
+}
+
 # Load the trained LSTM model
 model = Sequential([
     LSTM(256, return_sequences=False, input_shape=(40, 1)),
@@ -48,5 +59,6 @@ audio_file = st.file_uploader("Upload an audio file", type=["wav", "mp3"])
 if audio_file is not None:
     # Perform prediction when audio file is uploaded
     st.audio(audio_file, format='audio/wav')
-    emotion_label = predict_emotion(audio_file)
-    st.write("Predicted Emotion:", emotion_label)
+    emotion_label_index = predict_emotion(audio_file)
+    emotion_name = emotion_labels.get(emotion_label_index, "Unknown")
+    st.write("Predicted Emotion:", emotion_name)
