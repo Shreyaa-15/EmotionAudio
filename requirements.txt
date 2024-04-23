@@ -1,5 +1,5 @@
 streamlit==1.14.0
-numpy==1.21.5
+numpy==1.21.6
 librosa==0.9.0
 tensorflow==2.7.0
 libsndfile==1.0.31
